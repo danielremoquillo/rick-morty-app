@@ -8,21 +8,16 @@ class CharacterTile extends StatelessWidget {
 
   final Character character;
 
-  List<Color> status = [Colors.green, Colors.red, Colors.grey];
-
-  int statusCode(String status) {
-    if (status == 'Alive') {
-      return 0;
-    } else if (status == 'Dead') {
-      return 1;
-    }
-    return 2;
-  }
+  Map<String, Color> status = {
+    'Alive': Colors.green,
+    'Dead': Colors.red,
+    'unknown': Colors.grey
+  };
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(10.0),
+      margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(20.0)),
           color: AppTheme.characterTileColor),
@@ -64,7 +59,7 @@ class CharacterTile extends StatelessWidget {
                     Icon(
                       Icons.circle,
                       size: 10,
-                      color: status[statusCode(character.status)],
+                      color: status[character.status],
                     ),
                     const SizedBox(width: 5),
                     Text(
