@@ -4,7 +4,7 @@
 
    <application
         android:label="rick_morty_api"
-        android:name="${Rick and Morty}"
+        android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

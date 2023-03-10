@@ -5,6 +5,7 @@ class Character {
   final String species;
   final String gender;
   final String image;
+  final Map<String, dynamic> location;
 
   const Character({
     required this.name,
@@ -13,6 +14,7 @@ class Character {
     required this.species,
     required this.gender,
     required this.image,
+    required this.location,
   });
 
   factory Character.fromJson(Map<String, dynamic> json) {
@@ -23,6 +25,7 @@ class Character {
       gender: json['gender'] as String,
       image: json['image'] as String,
       species: json['species'] as String,
+      location: json['location'] as Map<String, dynamic>,
     );
   }
 }

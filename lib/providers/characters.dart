@@ -41,9 +41,15 @@ class CharactersProvider with ChangeNotifier {
   Future<List<Character>> fetchCharacter(http.Client client) async {
     final response = await client.get(
         Uri.parse('https://rickandmortyapi.com/api/character/?page=$_page'));
-
+    if (response.statusCode == 200) {
+      final decodedJson = json.decode(response.body);
+      return decodedJson['results']
+          .map<Character>((json) => Character.fromJson(json))
+          .toList();
+    } else {
+      throw Exception('Failed to fetch photos');
+    }
     // Use the compute function to run parsePhotos in a separate isolate.
-    return compute(parseCharacter, response.body);
   }
 
 // A function that converts a response body into a List<Photo>.
