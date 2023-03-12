@@ -6,6 +6,19 @@ class AppTheme {
     color: const Color(0xFFF5F4F4),
     fontWeight: FontWeight.w600,
   );
+
+  static TextStyle characterInfoHeader = GoogleFonts.poppins(
+    color: const Color(0xFF262B32),
+    fontWeight: FontWeight.bold,
+    fontSize: 24,
+  );
+
+  static TextStyle characterInfoSubHeader = GoogleFonts.poppins(
+    color: const Color(0xFF262B32),
+    fontWeight: FontWeight.w600,
+    fontSize: 20,
+  );
+
   static TextStyle pageTileHeader = GoogleFonts.poppins(
     color: const Color(0xFFF5F4F4),
     fontSize: 20,

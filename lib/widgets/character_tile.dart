@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rick_morty_api/classes/character.dart';
+import 'package:rick_morty_api/screens/character_info.dart';
 import 'package:rick_morty_api/widgets/theme.dart';
 
 // ignore: must_be_immutable
@@ -22,7 +23,13 @@ class CharacterListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: onTap,
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    CharacterProfilePage(character: character)));
+      },
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
         child: Row(
@@ -65,7 +72,8 @@ class CharacterListTile extends StatelessWidget {
                       ),
                       Text(
                         '${character.status} - ${character.species}',
-                        style: AppTheme.characterTileText,
+                        style: AppTheme.characterTileText.copyWith(
+                            fontSize: character.species.length > 18 ? 11 : 12),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),

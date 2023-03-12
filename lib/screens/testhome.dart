@@ -1,8 +1,9 @@
+import 'package:filter_list/filter_list.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_morty_api/classes/character.dart';
+import 'package:rick_morty_api/classes/query.dart';
 import 'package:rick_morty_api/models/character_list.dart';
 import 'package:rick_morty_api/providers/characters.dart';
-import 'package:rick_morty_api/widgets/character_tile.dart';
 import 'package:rick_morty_api/widgets/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -14,9 +15,38 @@ class TestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // List<QueryString> queriesList = [
+    //   QueryString('Status', {
+    //     'Alive': '&status=alive',
+    //     'Dead': '&status=dead',
+    //     'Unknown': '&status=unknown'
+    //   })
+    // ];
+
+    // List<QueryString> selectedQueries = [];
+
+    // void openFilterDialog() async {
+    //   await FilterListDialog.display<QueryString>(
+    //     context,
+    //     listData: queriesList,
+    //     selectedListData: selectedQueries,
+    //     choiceChipLabel: (query) {
+
+    //     },
+    //     validateSelectedItem: (list, val) => list!.contains(val),
+
+    //     onItemSearch: (user, query) {
+    //       return user.category.contains(query);
+    //       // return user.name!.toLowerCase().contains(query.toLowerCase());
+    //     },
+    //     onApplyButtonClick: (list) {
+    //       //   context.read<CharactersProvider>().setQuery(list.)
+    //     },
+    //   );
+    // }
+
     return Scaffold(
       backgroundColor: AppTheme.scaffoldBackgroundColor,
-      drawer: Drawer(),
       appBar: AppBar(
         title: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -66,6 +96,10 @@ class TestScreen extends StatelessWidget {
           }
         },
       ),
+      //   floatingActionButton: FloatingActionButton(
+      //     onPressed: openFilterDialog,
+      //     child: Icon(Icons.add),
+      //   ),
     );
   }
 }
