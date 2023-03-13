@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: AppTheme.appBarBackgroundColor,
       )),
       debugShowCheckedModeBanner: false,
-      home: const TestScreen(),
+      home: TestScreen(),
     );
   }
 }

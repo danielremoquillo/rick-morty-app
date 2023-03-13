@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rick_morty_api/classes/character.dart';
-import 'package:rick_morty_api/classes/query.dart';
 import 'package:rick_morty_api/providers/characters.dart';
 import 'package:rick_morty_api/widgets/character_tile.dart';
 import 'package:rick_morty_api/widgets/theme.dart';
-import 'package:filter_list/filter_list.dart';
 
 class CharacterList extends StatelessWidget {
-  CharacterList({super.key, required this.characters});
+  const CharacterList({super.key, required this.characters});
 
   final List<Character> characters;
 

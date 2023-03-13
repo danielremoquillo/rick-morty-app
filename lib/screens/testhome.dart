@@ -1,7 +1,6 @@
 import 'package:filter_list/filter_list.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_morty_api/classes/character.dart';
-import 'package:rick_morty_api/classes/query.dart';
 import 'package:rick_morty_api/models/character_list.dart';
 import 'package:rick_morty_api/providers/characters.dart';
 import 'package:rick_morty_api/widgets/theme.dart';
@@ -11,39 +10,38 @@ import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
 class TestScreen extends StatelessWidget {
-  const TestScreen({super.key});
+  TestScreen({super.key});
+
+  //Testing
+  Map<String, String> queryMap = {
+    'Alive': '&status=alive',
+    'Dead': '&status=dead',
+    'Unknown': '&status=unknown'
+  };
+  //Testing
+
+  final List<String> queryKeys = ['Alive', 'Dead', 'Unknown'];
 
   @override
   Widget build(BuildContext context) {
-    // List<QueryString> queriesList = [
-    //   QueryString('Status', {
-    //     'Alive': '&status=alive',
-    //     'Dead': '&status=dead',
-    //     'Unknown': '&status=unknown'
-    //   })
-    // ];
+    List<String> selectedQueries = [];
 
-    // List<QueryString> selectedQueries = [];
-
-    // void openFilterDialog() async {
-    //   await FilterListDialog.display<QueryString>(
-    //     context,
-    //     listData: queriesList,
-    //     selectedListData: selectedQueries,
-    //     choiceChipLabel: (query) {
-
-    //     },
-    //     validateSelectedItem: (list, val) => list!.contains(val),
-
-    //     onItemSearch: (user, query) {
-    //       return user.category.contains(query);
-    //       // return user.name!.toLowerCase().contains(query.toLowerCase());
-    //     },
-    //     onApplyButtonClick: (list) {
-    //       //   context.read<CharactersProvider>().setQuery(list.)
-    //     },
-    //   );
-    // }
+    void openFilterDialog() async {
+      await FilterListDialog.display<String>(
+        context,
+        listData: queryKeys,
+        selectedListData: selectedQueries,
+        choiceChipLabel: (query) => query,
+        validateSelectedItem: (list, val) => list!.contains(val),
+        onItemSearch: (string, query) {
+          return string.contains(query);
+          // return user.name!.toLowerCase().contains(query.toLowerCase());
+        },
+        onApplyButtonClick: (list) {
+          //   context.read<CharactersProvider>().setQuery(list.)
+        },
+      );
+    }
 
     return Scaffold(
       backgroundColor: AppTheme.scaffoldBackgroundColor,
@@ -96,10 +94,12 @@ class TestScreen extends StatelessWidget {
           }
         },
       ),
-      //   floatingActionButton: FloatingActionButton(
-      //     onPressed: openFilterDialog,
-      //     child: Icon(Icons.add),
-      //   ),
+      //Testing
+
+      floatingActionButton: FloatingActionButton(
+        onPressed: openFilterDialog,
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
