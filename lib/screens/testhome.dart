@@ -1,11 +1,10 @@
-import 'package:filter_list/filter_list.dart';
 import 'package:flutter/material.dart';
 import 'package:rick_morty_api/classes/character.dart';
 import 'package:rick_morty_api/models/character_list.dart';
 import 'package:rick_morty_api/providers/characters.dart';
 import 'package:rick_morty_api/widgets/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
-
+import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
@@ -24,25 +23,6 @@ class TestScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> selectedQueries = [];
-
-    void openFilterDialog() async {
-      await FilterListDialog.display<String>(
-        context,
-        listData: queryKeys,
-        selectedListData: selectedQueries,
-        choiceChipLabel: (query) => query,
-        validateSelectedItem: (list, val) => list!.contains(val),
-        onItemSearch: (string, query) {
-          return string.contains(query);
-          // return user.name!.toLowerCase().contains(query.toLowerCase());
-        },
-        onApplyButtonClick: (list) {
-          //   context.read<CharactersProvider>().setQuery(list.)
-        },
-      );
-    }
-
     return Scaffold(
       backgroundColor: AppTheme.scaffoldBackgroundColor,
       appBar: AppBar(
@@ -95,11 +75,6 @@ class TestScreen extends StatelessWidget {
         },
       ),
       //Testing
-
-      floatingActionButton: FloatingActionButton(
-        onPressed: openFilterDialog,
-        child: Icon(Icons.add),
-      ),
     );
   }
 }

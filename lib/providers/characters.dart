@@ -12,12 +12,12 @@ class CharactersProvider with ChangeNotifier {
   String _query = '';
 
   void setQuery(String query) {
-    _query += query;
+    _query = query;
     notifyListeners();
   }
 
-  void removeQuery(String query) {
-    _query = _query.replaceAll(query, '');
+  void clearQuery() {
+    _query = '';
     notifyListeners();
   }
 

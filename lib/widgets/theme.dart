@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static TextStyle characterTileHeader = GoogleFonts.poppins(
-    color: const Color(0xFFF5F4F4),
+    color: Colors.amber,
     fontWeight: FontWeight.w600,
   );
 
@@ -20,7 +20,7 @@ class AppTheme {
   );
 
   static TextStyle pageTileHeader = GoogleFonts.poppins(
-    color: const Color(0xFFF5F4F4),
+    color: Colors.amber,
     fontSize: 20,
     fontWeight: FontWeight.w500,
   );
@@ -44,6 +44,26 @@ class AppTheme {
   static TextStyle appBarText = GoogleFonts.poppins(
     color: const Color(0xFF262B32),
     fontSize: 16,
+  );
+
+  static TextStyle appDialogueHeader = GoogleFonts.poppins(
+    color: const Color(0xFFF5F4F4),
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+  );
+
+  static TextStyle appDialogueFilterButtons = GoogleFonts.poppins(
+    color: const Color(0xFFF5F4F4),
+    fontSize: 8,
+  );
+  static TextStyle appDialogueFilterGroupHeader = GoogleFonts.poppins(
+    color: const Color(0xFFF5F4F4),
+    fontSize: 18,
+  );
+
+  static TextStyle appDialogueButtons = GoogleFonts.poppins(
+    color: const Color(0xFFF5F4F4),
+    fontSize: 13,
   );
 
   static const Color characterTileColor = Color(0xFF3D3E45);

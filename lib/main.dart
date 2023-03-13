@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:rick_morty_api/providers/character_queries.dart';
 import 'package:rick_morty_api/providers/characters.dart';
 
 import 'package:rick_morty_api/screens/testhome.dart';
@@ -10,6 +11,7 @@ void main() {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => CharactersProvider()),
+      ChangeNotifierProvider(create: (_) => CharacterQueryProvider()),
     ],
     child: const MyApp(),
   ));
