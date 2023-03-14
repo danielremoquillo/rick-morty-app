@@ -36,9 +36,9 @@ There's no screenshots yet.
 
 - [Http](https://pub.dev/packages/http)
 - [Provider](https://pub.dev/packages/provider)
-- [GoogleFonts](https://pub.dev/packages/google_fonts)
-- [URLLauncher](https://pub.dev/packages/url_launcher)
-- [CustomRadioGroupeButton](https://pub.dev/packages/custom_radio_grouped_button)
+- [Google Fonts](https://pub.dev/packages/google_fonts)
+- [URL Launcher](https://pub.dev/packages/url_launcher)
+- [Custom Radio Group Button](https://pub.dev/packages/custom_radio_grouped_button)
 
 ## API
 
