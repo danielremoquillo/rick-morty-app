@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:rick_morty_api/widgets/theme.dart';
-
 // ignore: must_be_immutable
 class EpisodeListTile extends StatelessWidget {
   final Text title;

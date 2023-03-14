@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:rick_morty_api/classes/character.dart';
-import 'package:rick_morty_api/classes/episode.dart';
 import 'package:rick_morty_api/providers/episodes.dart';
 import 'package:rick_morty_api/widgets/episode_tile.dart';
 import 'package:rick_morty_api/widgets/theme.dart';
