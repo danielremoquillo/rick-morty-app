@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:rick_morty_api/classes/character.dart';
 import 'package:rick_morty_api/models/character_list.dart';
 import 'package:rick_morty_api/providers/characters.dart';
+import 'package:rick_morty_api/widgets/filter_dialog.dart';
 import 'package:rick_morty_api/widgets/theme.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:custom_radio_grouped_button/custom_radio_grouped_button.dart';
 import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
+// ignore: must_be_immutable
 class TestScreen extends StatelessWidget {
   TestScreen({super.key});
 
@@ -26,12 +27,14 @@ class TestScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppTheme.scaffoldBackgroundColor,
       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
         title: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              'Rick and Morty API',
+              'Rick and Morty App',
               style: AppTheme.appBarTitleText,
             ),
             InkWell(
@@ -54,25 +57,33 @@ class TestScreen extends StatelessWidget {
             fontWeight: FontWeight.w900,
             fontFamily: 'Segoe UI'),
       ),
-      body: FutureBuilder<List<Character>>(
-        future:
-            context.watch<CharactersProvider>().fetchCharacter(http.Client()),
-        builder: (context, snapshot) {
-          if (snapshot.hasError) {
-            return const Center(
-              child: Text(
-                'An error has occurred!',
-                style: TextStyle(color: AppTheme.contrastColor),
-              ),
-            );
-          } else if (snapshot.hasData) {
-            return CharacterList(characters: snapshot.data!);
-          } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
+      body: Column(
+        children: [
+          const FilterDialogBar(),
+          Expanded(
+            child: FutureBuilder<List<Character>>(
+              future: context
+                  .watch<CharactersProvider>()
+                  .fetchCharacter(http.Client()),
+              builder: (context, snapshot) {
+                if (snapshot.hasError) {
+                  return const Center(
+                    child: Text(
+                      'No character found!',
+                      style: TextStyle(color: AppTheme.contrastColor),
+                    ),
+                  );
+                } else if (snapshot.hasData) {
+                  return CharacterList(characters: snapshot.data!);
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+            ),
+          ),
+        ],
       ),
       //Testing
     );

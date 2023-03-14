@@ -6,6 +6,8 @@ class Character {
   final String gender;
   final String image;
   final Map<String, dynamic> location;
+  final Map<String, dynamic> origin;
+  final List<dynamic> episode;
 
   const Character({
     required this.name,
@@ -15,6 +17,8 @@ class Character {
     required this.gender,
     required this.image,
     required this.location,
+    required this.origin,
+    required this.episode,
   });
 
   factory Character.fromJson(Map<String, dynamic> json) {
@@ -26,6 +30,8 @@ class Character {
       image: json['image'] as String,
       species: json['species'] as String,
       location: json['location'] as Map<String, dynamic>,
+      origin: json['origin'] as Map<String, dynamic>,
+      episode: json['episode'],
     );
   }
 }

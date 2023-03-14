@@ -8,15 +8,20 @@ class AppTheme {
   );
 
   static TextStyle characterInfoHeader = GoogleFonts.poppins(
-    color: const Color(0xFF262B32),
-    fontWeight: FontWeight.bold,
+    color: Colors.amber,
+    fontWeight: FontWeight.w500,
     fontSize: 24,
   );
 
   static TextStyle characterInfoSubHeader = GoogleFonts.poppins(
-    color: const Color(0xFF262B32),
-    fontWeight: FontWeight.w600,
-    fontSize: 20,
+    color: Colors.amber,
+    fontWeight: FontWeight.w200,
+    fontSize: 13,
+  );
+
+  static TextStyle characterInfoSubText = GoogleFonts.poppins(
+    color: const Color(0xFFF5F4F4),
+    fontSize: 13,
   );
 
   static TextStyle pageTileHeader = GoogleFonts.poppins(
@@ -37,12 +42,12 @@ class AppTheme {
     color: const Color(0xFFF5F4F4),
   );
   static TextStyle appBarTitleText = GoogleFonts.poppins(
-    color: const Color(0xFF262B32),
+    color: const Color(0xFFF5F4F4),
     fontSize: 21,
     fontWeight: FontWeight.w500,
   );
   static TextStyle appBarText = GoogleFonts.poppins(
-    color: const Color(0xFF262B32),
+    color: const Color(0xFFF5F4F4),
     fontSize: 16,
   );
 
