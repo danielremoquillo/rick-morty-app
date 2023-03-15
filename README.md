@@ -31,9 +31,10 @@ If you have connected android device, run
 ## Screenshots
 
 <img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/user_interaction.gif" width=50% height=50% />
-![main ui](https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/character_home_ui.png)
-![character info ui](https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/character_info_ui.png)
-![filter dialog ui](https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/filter_dialog.png)
+<img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/character_home_ui.png" />
+<img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/character_info_ui.png" />
+<img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/filter_dialog.png"  />
+
 
 ## Plugins
 
