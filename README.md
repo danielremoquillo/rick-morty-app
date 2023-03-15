@@ -30,7 +30,7 @@ If you have connected android device, run
 
 ## Screenshots
 
-There's no screenshots yet.
+<img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/user_interaction.gif" width=50% height=50%>
 
 ## Plugins
 
