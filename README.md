@@ -30,7 +30,7 @@ If you have connected android device, run
 
 ## Screenshots
 
-<img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/user_interaction.gif" width=50% height=50% />
+<img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/user_interaction.gif" width=37% height=37% />
 <img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/character_home_ui.png" />
 <img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/character_info_ui.png" />
 <img src="https://github.com/danielremoquillo/screenshots/blob/main/rick-morty-app/filter_dialog.png"  />
